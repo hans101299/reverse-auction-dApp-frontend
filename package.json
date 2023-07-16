@@ -1,4 +1,5 @@
 {
+  "homepage": "http://hans101299.github.io/reverse-auction-dApp-frontend",
   "name": "reverse-auction-dapp",
   "description": "A dApp to play with reverse auctions, where the lowest and non repeated auction wins.",
   "version": "0.1.0",
@@ -23,6 +24,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -51,6 +54,7 @@
     "@nomiclabs/hardhat-etherscan": "^3.1.1",
     "@openzeppelin/hardhat-upgrades": "^1.21.0",
     "chai": "^4.3.6",
+    "gh-pages": "^5.0.0",
     "hardhat": "^2.12.7",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.70.0",
