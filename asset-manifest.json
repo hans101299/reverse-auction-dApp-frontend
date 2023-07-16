@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/reverse-auction-dApp-frontend/static/css/main.6adcade5.css",
+    "main.js": "/reverse-auction-dApp-frontend/static/js/main.f4cbc934.js",
+    "static/js/787.f27ea4c2.chunk.js": "/reverse-auction-dApp-frontend/static/js/787.f27ea4c2.chunk.js",
+    "static/media/revicons.eot": "/reverse-auction-dApp-frontend/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/reverse-auction-dApp-frontend/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/reverse-auction-dApp-frontend/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/magnifying-glass.svg": "/reverse-auction-dApp-frontend/static/media/magnifying-glass.0d1039d8176e17437a67.svg",
+    "index.html": "/reverse-auction-dApp-frontend/index.html",
+    "static/media/close.svg": "/reverse-auction-dApp-frontend/static/media/close.ae469738e479d31aa952364e12120ad2.svg",
+    "main.6adcade5.css.map": "/reverse-auction-dApp-frontend/static/css/main.6adcade5.css.map",
+    "main.f4cbc934.js.map": "/reverse-auction-dApp-frontend/static/js/main.f4cbc934.js.map",
+    "787.f27ea4c2.chunk.js.map": "/reverse-auction-dApp-frontend/static/js/787.f27ea4c2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6adcade5.css",
+    "static/js/main.f4cbc934.js"
+  ]
+}
