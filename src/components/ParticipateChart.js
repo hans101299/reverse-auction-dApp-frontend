@@ -78,7 +78,7 @@ const ParticipateChart = ({ auction, reverseAuction, usdcCoin, provider, setTogg
     else{
       try{
 
-        var response = await fetch('http://3.145.98.137:3002/participateRandom', {  // Enter your IP address here
+        var response = await fetch('http://http://52.15.146.10/:3002/participateRandom', {  // Enter your IP address here
           method: 'POST', 
           mode: 'cors', 
           headers: { 'Content-Type': 'application/json' , 'Access-Control-Allow-Origin': '*'},
