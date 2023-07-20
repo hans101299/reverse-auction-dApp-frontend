@@ -150,7 +150,7 @@ header {
   position: absolute;
   bottom: 25px;
   left: 10%;
-  max-width: 450px;
+  max-width: 622px;
 
   font-family: "Open Sans";
   font-size: clamp(2rem, 5vw, 3rem);

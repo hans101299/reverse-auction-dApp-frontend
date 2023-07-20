@@ -92,12 +92,26 @@ const networks = {
   
       const totalModifiersIds = await modifierReverseAuction.connect(signer).getMyModifiers();
       const modifiers = []
-  
+      
+      console.log(totalModifiersIds)
       for(const id of totalModifiersIds){
+        var modifier;
         var modifierURI = await modifierReverseAuction.tokenURI(id);
         modifierURI = modifierURI.replace("ipfs://", "https://ipfs.io/ipfs/");
         var response = await fetch(modifierURI)
-        var modifier = await response.json();
+        if(response.status === 422){
+          modifier = {
+            image: "https://img.freepik.com/premium-vector/system-software-update-upgrade-concept-loading-process-screen-vector-illustration_175838-2182.jpg?w=2000",
+            name: "-",
+            attributes: [
+              {"value":"-"},
+              {"value":"-"}
+            ]
+          }
+        }
+        else{
+          modifier = await response.json();
+        }
         modifiers.push(modifier)
       }
 
