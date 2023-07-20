@@ -53,7 +53,7 @@ const BuyModifierChart = ({ reverseAuction, usdcCoin, provider, setToggleBuyModi
     const address = await signer.getAddress();
     try{
 
-      fetch('http://18.119.133.254:3002/buyModifier', {  // Enter your IP address here
+      fetch('http://3.144.15.19:3002/buyModifier', {  // Enter your IP address here
         method: 'POST', 
         mode: 'cors', 
         headers: { 'Content-Type': 'application/json' , 'Access-Control-Allow-Origin': '*'},

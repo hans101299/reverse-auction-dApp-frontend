@@ -1,14 +1,14 @@
 {
     "ReverseAuction": {
-        "address": "0xB24BE19d6F361a1B0B78941C19a77c9F5dfe8bA3"
+        "address": "0x79f149F9917c89ccA2bd24a01ee4a49cc0384dDD"
     },
     "USDCCoin": {
-        "address": "0x6BA8b06834d361bAE25499E63Cf41f625F222952"
+        "address": "0x43C5A9AF2184FE59AE8541ac2B770EF6cfa574DD"
     },
     "TicketReverseAuction": {
-        "address": "0xCd8549bE71D63952c0AEC474B1353B752AcaCC33"
+        "address": "0xaf7AE21675F7b9bf2f801A8f140847390947fe86"
     },
     "ModifierReverseAuction": {
-        "address": "0xef41EFC4269359071525875E0d8794848843a5f1"
+        "address": "0x10DD0bcFDeFE224B7841f49DC252fC6F41CAD9E0"
     }
 }

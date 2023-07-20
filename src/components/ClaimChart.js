@@ -5,6 +5,10 @@ import config from '../config.json'
 // Import Assets
 import close from '../assets/close.svg'
 
+function convertToDecimal(number) {
+  return (number / 10).toFixed(1);
+}
+
 const ClaimChart = ({ auction, reverseAuction, ticketReverseAuction, provider, setToggleClaim }) => {
   const decimals = 10**6;
   
@@ -33,7 +37,7 @@ const ClaimChart = ({ auction, reverseAuction, ticketReverseAuction, provider, s
     for(const id of res){
       const ticketId = id.toNumber();
       const number = await reverseAuction.ticketToNumber(ticketId);
-      tickets.push([ticketId, number.toNumber()]);
+      tickets.push([ticketId, convertToDecimal(number.toNumber())]);
     }
 
     setTicketIds(tickets);
@@ -48,7 +52,7 @@ const ClaimChart = ({ auction, reverseAuction, ticketReverseAuction, provider, s
   const handleSubmitChekWinner = async (event) => {
     event.preventDefault();
     const winnerNumber = await reverseAuction.checkWinner(auction.id);
-    setWinnerNumber("Winner Number:" + winnerNumber.toNumber().toString())
+    setWinnerNumber("Winner Number:" + convertToDecimal(winnerNumber.toNumber()))
   }
 
   const handleSubmitCreateCommit = async (event) => {
