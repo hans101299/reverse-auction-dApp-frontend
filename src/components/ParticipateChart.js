@@ -15,6 +15,8 @@ const ParticipateChart = ({ auction, reverseAuction, usdcCoin, provider, setTogg
   const [commit, setCommit] = useState(false)
   const [allowanceUSDC, setAllowanceUSDC] = useState(null)
 
+  const [ticketIds, setTicketIds] = useState([])
+
 
   const usdcAllowanceRef = useRef(null);
 
@@ -35,6 +37,27 @@ const ParticipateChart = ({ auction, reverseAuction, usdcCoin, provider, setTogg
 
 
   const isSelect = auction.typeA == normalSelectType || auction.typeA == modifiersSelectType;
+
+  const loadBlockchainData = async () => {
+
+    const signer = await provider.getSigner()
+
+    const tickets = []
+
+    const res = await reverseAuction.connect(signer).getMyBidsInAuction(auction.id);
+
+    for(const id of res){
+      const ticketId = id.toNumber();
+      const number = await reverseAuction.ticketToNumber(ticketId);
+      tickets.push([ticketId, number.toNumber()]);
+    }
+
+    setTicketIds(tickets);
+  }
+
+  useEffect(() => {
+    loadBlockchainData()
+  }, [])
 
   const handleSubmitAllowanceUSDC = async (event) => {
     event.preventDefault();
@@ -142,28 +165,41 @@ const ParticipateChart = ({ auction, reverseAuction, usdcCoin, provider, setTogg
       }
       </div>
 
-      {isSelect && <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-            <p>Put your commit:</p>
-            <input ref={commitRef} type="text" />
-          </label>
-        <button type="submit">Submit</button>
-        <p>{error}</p>
-      </form>
-      </div>}
+      <div>
 
-      {!isSelect && (
+        {isSelect && <div>
         <form onSubmit={handleSubmit}>
-        <label>
-            <p>Put your password:</p>
-            <input ref={commitRef} type="text" />
-          </label>
-        <button type="submit">Submit</button>
-        <p>{numberSelected}</p>
-        <p>{error}</p>
-      </form>
-      )}
+          <label>
+              <p>Put your commit:</p>
+              <input ref={commitRef} type="text" />
+            </label>
+          <button type="submit">Submit</button>
+          <p>{error}</p>
+        </form>
+        </div>}
+
+        {!isSelect && (
+          <form onSubmit={handleSubmit}>
+          <label>
+              <p>Put your password:</p>
+              <input ref={commitRef} type="text" />
+            </label>
+          <button type="submit">Submit</button>
+          <p>{numberSelected}</p>
+          <p>{error}</p>
+        </form>
+        )}
+
+        {ticketIds.length > 0 && <div>
+          <p>Past participations: </p>
+          <select name="SelectTicket">
+            {ticketIds.map((ticket, index) => (
+              <option value={ticket[0]} key={index}>Ticket:{ticket[0]}</option>
+            ))}
+          </select>
+        </div>}
+      </div>
+      
         
       </div>
     </div >

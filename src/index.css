@@ -314,7 +314,7 @@ header {
 }
 
 .card__button_left {
-  grid-column: 7 / span 3 !important;
+  grid-column: 8 / span 3 !important;
   grid-row: 1 / span 2;
   place-self: center;
 }
